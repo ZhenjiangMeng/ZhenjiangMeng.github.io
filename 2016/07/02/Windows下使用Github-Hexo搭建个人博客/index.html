@@ -3,17 +3,78 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MZj_blog</title>
+  <title>Windows下使用Github +Hexo搭建个人博客 | MZj_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术的点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MZj_blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="标签： blog Hexo摘要：这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。
+
+前言
+  教程主要介绍了如何使用Github和Hex来搭建属于自己的博客。
+
+为什么要使用Github+Hexo这样的组合来搭建博客？很多人用wordpress,你为什么要用Github Pages来搭建？
+
+Github有免费空间（官方没有磁盘限制，但是推荐1G">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows下使用Github +Hexo搭建个人博客">
+<meta property="og:url" content="http://yoursite.com/2016/07/02/Windows下使用Github-Hexo搭建个人博客/index.html">
 <meta property="og:site_name" content="MZj_blog">
-<meta property="og:description" content="技术的点滴">
+<meta property="og:description" content="标签： blog Hexo摘要：这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。
+
+前言
+  教程主要介绍了如何使用Github和Hex来搭建属于自己的博客。
+
+为什么要使用Github+Hexo这样的组合来搭建博客？很多人用wordpress,你为什么要用Github Pages来搭建？
+
+Github有免费空间（官方没有磁盘限制，但是推荐1G">
+<meta property="og:image" content="http://yoursite.com/source/img/blog1.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/95wsi4jv4i5nmsy3vmhn3be9/blog1.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/qzow0aumofiq7023hakivrt7/blog2.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ej7qcixfll0ps5dxr4aa7rg3/blog3.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/nm6v17m2z5zumoao1dkiol6q/blog4.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/whcj7jlx9deywktlq89zcwul/blog5.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/90wdxypg4py8za3e2nvgy20w/blog6.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/c9ndrndktkwyxt8isp12k6g4/blog7.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/rwr1s9q086x0ofzfzmg75qwi/blog8.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/6a1kp101cvpaj5pgk10pfdm8/blog9.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ttjgt57whsitm7d3816kgsd0/blog10.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/mm49nncf8og1knzkezmr8s2c/image_1amld9pt71pqqt0gvk68c255b57.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ng103v53qz4120u7xz9vpfoa/image_1amldj4l51gd11g0s1btq1m9j1f5f5k.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ajzhrb38y5fbmuhpzdm1ds1d/blog12.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/6xrw4hhigxww852avc6kudui/image_1amldms9mk8a1gqd3r1lr8iao6d.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/wqa29avzo0qih1l64uji0guk/image_1amldnl59bal1mfk1cdt13sp8i6q.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/8dgdonqfgtxhsobgx3ffmlqe/image_1amldoar1172bc2n1ej11rr710fm77.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/3mbrb4i6jzs8iqf6rqp78b2u/image_1amldoskl12111e6b3ld1jpclqv7k.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/mrnevogdhvdxr8u2n8io2cc0/image_1amldpbp61lsumgbd3p9iffc81.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/12pfrlna4wo6wyrrp494afp6/image_1amldtdivb9fp16u622n911qn8e.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/9g5ql3m9f49ljh5xxnj0vwi7/image_1amle448nmls1a081gmj1nai1emk8r.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/q4hp6xb8jswf1rwh607l34w8/image_1amle9c1jsrm4sn1l551i5m10p198.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/1pmbfpimdvmsy72da0de1ql8/image_1amlebat0ae6h591ggr8nbu309l.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/7en5f3deg8eba1zki55kihyf/image_1amlfs3gaqepfbqafpbv749sct.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/wfv3qi3jnrq543qpms07i7j0/image_1amlg6e24a54148u1o3v17nc3pbda.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/p9i5zf2atru7of68nht0122n/image_1amleea05cia5icqjuf269r0a2.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/9r7qxl6lzpjsvspgi7jwo7d9/image_1amlegkau1sr77ds1e1duc310b3af.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/f72e97w28n40jxm78wvvo4a3/image_1amlej5ga19542kn11eold1uv9as.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/awj4tnyn3rj4xdazp15r401z/image_1amlellmc134u1ie95rr1s2tmpb9.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/37qmy16iii63oao0c2b3ddeb/image_1amlesekd1ba3hsvrvto39122rbm.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/qxgrpwmgpfbelp9e97lh8bfr/image_1amltvav91m6bbh1g1j122eo6ieu.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/v066ik4h0guzls1o1i37fqmy/image_1amleuau417t97nq1lqo1pm21d87cg.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/5c62xn8kwdjm13ia9j4v4muy/image_1amlsur3v1id310gtl2t1ke1h4hdn.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/peqwzpp36afnjgtd70b72glt/image_1amlt4ska1kir14h71c504r315p1e4.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ti51zgs7ecrzdi12s6rkdtu5/image_1amlti6etndg1muo1po4161i15rneh.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/buqr3ih5wpxlki07yre8sybl/image_1amlu3scga7h1h8m19512gv1l5sfb.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/qrthg2x6maeve480nj6itc2x/image_1amluhe1m1cbe12ru157j1npnooafo.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/eeeqe4jv37har7mq0f1hywn6/image_1amluo8h2130631g10p51gde1s6ng5.png">
+<meta property="og:updated_time" content="2016-07-02T15:34:33.052Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MZj_blog">
-<meta name="twitter:description" content="技术的点滴">
+<meta name="twitter:title" content="Windows下使用Github +Hexo搭建个人博客">
+<meta name="twitter:description" content="标签： blog Hexo摘要：这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。
+
+前言
+  教程主要介绍了如何使用Github和Hex来搭建属于自己的博客。
+
+为什么要使用Github+Hexo这样的组合来搭建博客？很多人用wordpress,你为什么要用Github Pages来搭建？
+
+Github有免费空间（官方没有磁盘限制，但是推荐1G">
+<meta name="twitter:image" content="http://yoursite.com/source/img/blog1.png">
   
     <link rel="alternate" href="/atom.xml" title="MZj_blog" type="application/atom+xml">
   
@@ -66,9 +127,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Windows下使用Github-Hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Windows下使用Github-Hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/02/Windows下使用Github-Hexo搭建个人博客/" class="article-date">
   <time datetime="2016-07-02T15:25:06.000Z" itemprop="datePublished">2016-07-02</time>
@@ -81,8 +140,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/02/Windows下使用Github-Hexo搭建个人博客/">Windows下使用Github +Hexo搭建个人博客</a>
+    <h1 class="article-title" itemprop="name">
+      Windows下使用Github +Hexo搭建个人博客
     </h1>
   
 
@@ -242,91 +301,19 @@ hexo s
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Github-Hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/02/Github-Hexo搭建个人博客/" class="article-date">
-  <time datetime="2016-07-02T07:20:02.000Z" itemprop="datePublished">2016-07-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/02/Github-Hexo搭建个人博客/">Github+Hexo搭建个人博客</a>
-    </h1>
+    <a href="/2016/07/02/Github-Hexo搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Github+Hexo搭建个人博客</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/02/Github-Hexo搭建个人博客/" data-id="ciq5bt5580000fwtuf3swb96o" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/01/hello-world/" class="article-date">
-  <time datetime="2016-07-01T08:50:43.790Z" itemprop="datePublished">2016-07-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/01/hello-world/" data-id="ciq5bt55m0004fwtugflc6cpo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
