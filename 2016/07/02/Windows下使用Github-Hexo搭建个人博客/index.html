@@ -1,105 +1,155 @@
-
- <!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="baidu_union_verify" content="d1952c66cf48912e21c18c7c581f382a">
-  <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
-<meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
+  <meta charset="utf-8">
   
-    <title>Windows下使用Github +Hexo搭建个人博客 | MZj_blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="MZj">
-    
-    <meta name="description" content="标签： blog Hexo摘要：这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。
+  <title>Windows下使用Github +Hexo搭建个人博客 | MZj_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="标签： blog Hexo摘要：这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。
 
 前言
   教程主要介绍了如何使用Github和Hex来搭建属于自己的博客。
 
-为什么要使用Github+Hexo这样的组合来搭建博客？很多人用wordpress,你">
-    
-    
-    
-    
-    <link rel="alternate" href="atom.xml" title="MZj_blog" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="stylesheet" href="../../../../css/style.css">
-    
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            var _bdId ='391982416296a0d54221f59fe35250d4';
-             hm.src = "//hm.baidu.com/hm.js?" + _bdId;
-             var s = document.getElementsByTagName("script")[0]; 
-             s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-     
+为什么要使用Github+Hexo这样的组合来搭建博客？很多人用wordpress,你为什么要用Github Pages来搭建？
+
+Github有免费空间（官方没有磁盘限制，但是推荐1G">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows下使用Github +Hexo搭建个人博客">
+<meta property="og:url" content="http://yoursite.com/2016/07/02/Windows下使用Github-Hexo搭建个人博客/index.html">
+<meta property="og:site_name" content="MZj_blog">
+<meta property="og:description" content="标签： blog Hexo摘要：这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。
+
+前言
+  教程主要介绍了如何使用Github和Hex来搭建属于自己的博客。
+
+为什么要使用Github+Hexo这样的组合来搭建博客？很多人用wordpress,你为什么要用Github Pages来搭建？
+
+Github有免费空间（官方没有磁盘限制，但是推荐1G">
+<meta property="og:image" content="http://yoursite.com/source/img/blog1.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/95wsi4jv4i5nmsy3vmhn3be9/blog1.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/qzow0aumofiq7023hakivrt7/blog2.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ej7qcixfll0ps5dxr4aa7rg3/blog3.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/nm6v17m2z5zumoao1dkiol6q/blog4.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/whcj7jlx9deywktlq89zcwul/blog5.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/90wdxypg4py8za3e2nvgy20w/blog6.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/c9ndrndktkwyxt8isp12k6g4/blog7.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/rwr1s9q086x0ofzfzmg75qwi/blog8.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/6a1kp101cvpaj5pgk10pfdm8/blog9.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ttjgt57whsitm7d3816kgsd0/blog10.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/mm49nncf8og1knzkezmr8s2c/image_1amld9pt71pqqt0gvk68c255b57.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ng103v53qz4120u7xz9vpfoa/image_1amldj4l51gd11g0s1btq1m9j1f5f5k.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ajzhrb38y5fbmuhpzdm1ds1d/blog12.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/6xrw4hhigxww852avc6kudui/image_1amldms9mk8a1gqd3r1lr8iao6d.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/wqa29avzo0qih1l64uji0guk/image_1amldnl59bal1mfk1cdt13sp8i6q.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/8dgdonqfgtxhsobgx3ffmlqe/image_1amldoar1172bc2n1ej11rr710fm77.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/3mbrb4i6jzs8iqf6rqp78b2u/image_1amldoskl12111e6b3ld1jpclqv7k.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/mrnevogdhvdxr8u2n8io2cc0/image_1amldpbp61lsumgbd3p9iffc81.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/12pfrlna4wo6wyrrp494afp6/image_1amldtdivb9fp16u622n911qn8e.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/9g5ql3m9f49ljh5xxnj0vwi7/image_1amle448nmls1a081gmj1nai1emk8r.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/q4hp6xb8jswf1rwh607l34w8/image_1amle9c1jsrm4sn1l551i5m10p198.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/1pmbfpimdvmsy72da0de1ql8/image_1amlebat0ae6h591ggr8nbu309l.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/7en5f3deg8eba1zki55kihyf/image_1amlfs3gaqepfbqafpbv749sct.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/wfv3qi3jnrq543qpms07i7j0/image_1amlg6e24a54148u1o3v17nc3pbda.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/p9i5zf2atru7of68nht0122n/image_1amleea05cia5icqjuf269r0a2.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/9r7qxl6lzpjsvspgi7jwo7d9/image_1amlegkau1sr77ds1e1duc310b3af.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/f72e97w28n40jxm78wvvo4a3/image_1amlej5ga19542kn11eold1uv9as.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/awj4tnyn3rj4xdazp15r401z/image_1amlellmc134u1ie95rr1s2tmpb9.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/37qmy16iii63oao0c2b3ddeb/image_1amlesekd1ba3hsvrvto39122rbm.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/qxgrpwmgpfbelp9e97lh8bfr/image_1amltvav91m6bbh1g1j122eo6ieu.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/v066ik4h0guzls1o1i37fqmy/image_1amleuau417t97nq1lqo1pm21d87cg.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/5c62xn8kwdjm13ia9j4v4muy/image_1amlsur3v1id310gtl2t1ke1h4hdn.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/peqwzpp36afnjgtd70b72glt/image_1amlt4ska1kir14h71c504r315p1e4.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/ti51zgs7ecrzdi12s6rkdtu5/image_1amlti6etndg1muo1po4161i15rneh.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/buqr3ih5wpxlki07yre8sybl/image_1amlu3scga7h1h8m19512gv1l5sfb.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/qrthg2x6maeve480nj6itc2x/image_1amluhe1m1cbe12ru157j1npnooafo.png">
+<meta property="og:image" content="http://static.zybuluo.com/Mzj/eeeqe4jv37har7mq0f1hywn6/image_1amluo8h2130631g10p51gde1s6ng5.png">
+<meta property="og:updated_time" content="2016-07-02T15:34:33.052Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows下使用Github +Hexo搭建个人博客">
+<meta name="twitter:description" content="标签： blog Hexo摘要：这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。
+
+前言
+  教程主要介绍了如何使用Github和Hex来搭建属于自己的博客。
+
+为什么要使用Github+Hexo这样的组合来搭建博客？很多人用wordpress,你为什么要用Github Pages来搭建？
+
+Github有免费空间（官方没有磁盘限制，但是推荐1G">
+<meta name="twitter:image" content="http://yoursite.com/source/img/blog1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="MZj_blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  
+
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="MZj_blog">MZj_blog</a></h1>
-				<a class="blog-motto">既然选择了远方，便只顾风雨兼程。</a>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">归档</a></li>
-					
-					<li>
-					
-                                            <form class="search" action=http://zhannei.baidu.com/cse/search target="_blank">
-                                            <label>Search</label>
-                                        <input name="s" type="hidden" value= null ><input type="text" name="q" size="30" placeholder="搜索"><br>
-					
-					</li>
-				</ul>
-                            </nav>			
-</div>
-
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/07/02/Windows下使用Github-Hexo搭建个人博客/" title="Windows下使用Github +Hexo搭建个人博客" itemprop="url">Windows下使用Github +Hexo搭建个人博客</a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="http://yoursite.com" title="MZj">MZj</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2016-07-02T15:25:06.000Z" itemprop="datePublished">2016-07-02</time>
-    更新日期:<time datetime="2016-07-02T15:34:33.052Z" itemprop="dateModified">2016-07-02</time>
-    
-  </p>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../../../index.html" id="logo">MZj_blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../../../index.html" id="subtitle">既然选择了远方，便只顾风雨兼程。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="../../../../index.html">Home</a>
+        
+          <a class="main-nav-link" href="../../../../archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
 </header>
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#标签：-blog-Hexo"><span class="toc-number">1.</span> <span class="toc-text">标签： blog Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本机已成功连接到github。"><span class="toc-number">2.</span> <span class="toc-text">本机已成功连接到github。</span></a></li></ol>
-		</div>
-		
-		<h2 id="标签：-blog-Hexo"><a href="#标签：-blog-Hexo" class="headerlink" title="标签： blog Hexo"></a>标签： blog Hexo</h2><p><strong>摘要：</strong>这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。</p>
+      <div class="outer">
+        <section id="main"><article id="post-Windows下使用Github-Hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="" class="article-date">
+  <time datetime="2016-07-02T15:25:06.000Z" itemprop="datePublished">2016-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Windows下使用Github +Hexo搭建个人博客
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="标签：-blog-Hexo"><a href="#标签：-blog-Hexo" class="headerlink" title="标签： blog Hexo"></a>标签： blog Hexo</h2><p><strong>摘要：</strong>这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。</p>
 <hr>
 <p><strong>前言</strong></p>
 <p>  教程主要介绍了如何使用Github和Hex来搭建属于自己的博客。</p>
@@ -241,306 +291,106 @@ hexo s
 <li><a href="http://blog.csdn.net/u012995964/article/details/50152261" target="_blank" rel="external">GitHub上搭建Hexo个人博客</a></li>
 <li><a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">Hexo搭建Github静态博客</a></li>
 </ol>
-  
-	</div>
-		<footer class="article-footer clearfix">
 
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://yoursite.com/2016/07/02/Windows下使用Github-Hexo搭建个人博客/" data-title="Windows下使用Github +Hexo搭建个人博客 | MZj_blog" data-tsina="null" class="share clearfix">
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/02/Windows下使用Github-Hexo搭建个人博客/" data-id="ciq6chkkh000214tue9m5go6n" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
-
-<div class="next">
-<a href="/2016/07/02/Github-Hexo搭建个人博客/"  title="Github+Hexo搭建个人博客">
- <strong>NEXT:</strong><br/> 
- <span>Github+Hexo搭建个人博客
-</span>
-</a>
-</div>
-
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="../Github-Hexo搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Github+Hexo搭建个人博客</div>
+    </a>
+  
 </nav>
 
-	
-<section class="comment">
-	
-	<div class="ds-thread" data-title="Windows下使用Github +Hexo搭建个人博客" data-thread-key="Windows下使用Github-Hexo搭建个人博客" data-author-key="MZj" data-url="http://yoursite.com/post/Windows下使用Github-Hexo搭建个人博客"></div>
-	
+  
+</article>
+
 </section>
+        
+          <aside id="sidebar">
+  
+    
 
+  
+    
 
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#标签：-blog-Hexo"><span class="toc-number">1.</span> <span class="toc-text">标签： blog Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本机已成功连接到github。"><span class="toc-number">2.</span> <span class="toc-text">本机已成功连接到github。</span></a></li></ol>
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/07/">七月 2016</a></li></ul>
+    </div>
   </div>
 
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
-<div id="authorInfo">
-	
-		<div class="author-logo"></div>		
-	
-	<div class="social-list" class="clearfix">
-		
-		
-		
-		
-		
-	</div>
-</div>
 
   
-
-  
-
-  <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
-    <ul>
-      <li><a href="http://hexo.io" target="_blank" title="Hexo">Hexo</a></li>
-      <li><a href="http://gengbiao.me" target="_blank" title="coney">coney's Blog</a></li>
-    </ul>
-</div>
-
-
-  <div class="rsspart">
-	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
-</div>
-
-  
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
     
-            <p class="copyright"> © 2016 
-		
-		<a href="http://yoursite.com" target="_blank" title="MZj">MZj</a>
-		
-            && Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> && Theme by <a href="http://gengbiao.me" target="_blank" title="coney">coney</a>
-            </div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
         
-    }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
-</script>
+          <li>
+            <a href="">Windows下使用Github +Hexo搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="../Github-Hexo搭建个人博客/">Github+Hexo搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="../../01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
-  });
-});     
-</script>
-
-
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"null"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
-
-
-
-
-
-
-<script>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 MZj<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
     
-        var _bdImg = '4';
-    
-    window._bd_share_config={
-        "common":{
-            "bdSnsKey":{
 
-            },
-            "bdText":"",
-            "bdMini":"2",
-            "bdMiniList":[
-                "qzone",
-                "tsina",
-                "weixin",
-                "renren",
-                "tqq",
-                "tieba",
-                "douban",
-                "sqq",
-                "diandian",
-                "huaban",
-                "youdao",
-                "mail",
-                "ty",
-                "fbook",
-                "twi",
-                "linkedin",
-                "copy",
-                "print"
-            ],
-            "bdPic":"",
-            "bdStyle":"0",
-            "bdSize":"16"
-        },
-        "slide":{
-            "type":"slide",
-            "bdImg":_bdImg,
-            "bdPos":"right",
-            "bdTop":"350"
-        },
-        "image":{
-            "viewList":[
-                "weixin",
-                "qzone",
-                "tsina",
-                "renren",
-                "douban",
-                "tqq"
-            ],
-            "viewText":"分享：",
-            "viewSize":"16"
-        },
-        "selectShare":{
-            "bdContainerClass":null,
-            "bdSelectMiniList":[
-                "weixin",
-                "qzone",
-                "tsina",
-                "renren",
-                "douban",
-                "tqq"
-            ]
-        }
-    };
-    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'null', 'null');  
-ga('send', 'pageview');
-</script>
+<script src="../../../../js/script.js"></script>
 
-
-  </body>
+  </div>
+</body>
 </html>
-
