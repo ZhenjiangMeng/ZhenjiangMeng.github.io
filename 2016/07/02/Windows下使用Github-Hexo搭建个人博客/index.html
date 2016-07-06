@@ -62,7 +62,7 @@ Github有免费空间（官方没有磁盘限制，但是推荐1GB以下），�
 <meta property="og:image" content="http://static.zybuluo.com/Mzj/buqr3ih5wpxlki07yre8sybl/image_1amlu3scga7h1h8m19512gv1l5sfb.png">
 <meta property="og:image" content="http://static.zybuluo.com/Mzj/qrthg2x6maeve480nj6itc2x/image_1amluhe1m1cbe12ru157j1npnooafo.png">
 <meta property="og:image" content="http://static.zybuluo.com/Mzj/eeeqe4jv37har7mq0f1hywn6/image_1amluo8h2130631g10p51gde1s6ng5.png">
-<meta property="og:updated_time" content="2016-07-06T12:44:57.372Z">
+<meta property="og:updated_time" content="2016-07-06T12:49:45.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下使用Github +Hexo搭建个人博客">
 <meta name="twitter:description" content="摘要：这是我第一次搭建博客，也是我的第一篇教程。我想要把整个过程都记录下来，给需要搭建博客的同学一个参考。
@@ -258,7 +258,7 @@ $ pwd
 $ git config --global user.email &quot;你的邮箱&quot;
 </code></pre></li>
 <li><p>为了支持github，还需要安装另一个插件：</p>
-<pre><code>$cnpm install hexo-deployer-git --save
+<pre><code>$ cnpm install hexo-deployer-git --save
 </code></pre></li>
 </ul>
 <p>完成后出现以下目录<br><img src="http://static.zybuluo.com/Mzj/37qmy16iii63oao0c2b3ddeb/image_1amlesekd1ba3hsvrvto39122rbm.png" alt="image_1amlesekd1ba3hsvrvto39122rbm.png-147.8kB"><br>这还只是本地项目，现在要发布到github上面去，我们需要配置项目目录下的_config.yml文件，使用使用<a href="http://pan.baidu.com/s/1pJFruER" target="_blank" rel="external">Sublime_Text</a>编辑器（绿色软件无需安装，解压即可使用）打开blog/_config.yml文件，进行配置，打开它找到最后一行，我们把github的配置信息填上去。这里ZhenjiangMeng是我的登录名，你只需要将它改成你github的登录名，原封不动地配置好就行了。<br><em>不少教程会教你像第二张图那样配置，新版本是不能那样配的，请注意。</em><br><img src="http://static.zybuluo.com/Mzj/qxgrpwmgpfbelp9e97lh8bfr/image_1amltvav91m6bbh1g1j122eo6ieu.png" alt="image_1amltvav91m6bbh1g1j122eo6ieu.png-10.7kB"><br><img src="http://static.zybuluo.com/Mzj/v066ik4h0guzls1o1i37fqmy/image_1amleuau417t97nq1lqo1pm21d87cg.png" alt="image_1amleuau417t97nq1lqo1pm21d87cg.png-48.5kB"><br>•    我们开始发布博客吧！当前路径命令行下输入：</p>
@@ -284,7 +284,7 @@ $ hexo s
 <p>author: ZhenjiangMeng                    #博客作者</p>
 <p>language: zh-CN                     #博客语言</p>
 <p>timezone:                           #时区</p>
-<p>url: <a href="http://ZhenjiangMeng.github.io" target="_blank" rel="external">http://ZhenjiangMeng.github.io</a>       #博客地址,与申请的GitHub一致<br>root: /</p>
+<p>url: <a href="http://yoursite.com">http://yoursite.com</a><br>root: /</p>
 <p>permalink: :year/:month/:day/:title/ #博客链接格式<br>permalink_defaults:</p>
 <p>source_dir: source<br>public_dir: public<br>tag_dir: tags<br>archive_dir: archives<br>category_dir: categories<br>code_dir: downloads/code<br>i18n_dir: :lang<br>skip_render:</p>
 <p>new_post_name: :title.md # File name of new posts<br>default_layout: post<br>titlecase: false # Transform title into titlecase<br>external_link: true # Open external links in new tab<br>filename_case: 0<br>render_drafts: false<br>post_asset_folder: false<br>relative_link: false<br>future: true<br>highlight:<br>  enable: true<br>  line_number: true<br>  auto_detect: true<br>  tab_replace:</p>
