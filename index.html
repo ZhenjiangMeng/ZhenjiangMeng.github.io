@@ -73,6 +73,62 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-crontab计划任务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="2016/08/27/crontab计划任务/" class="article-date">
+  <time datetime="2016-08-26T16:38:55.000Z" itemprop="datePublished">2016-08-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2016/08/27/crontab计划任务/">crontab计划任务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="首先查看一下-etc-crontab文件："><a href="#首先查看一下-etc-crontab文件：" class="headerlink" title="首先查看一下/etc/crontab文件："></a>首先查看一下/etc/crontab文件：</h2><pre><code>$cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
+</code></pre><h2 id="crontab文件的格式："><a href="#crontab文件的格式：" class="headerlink" title="crontab文件的格式："></a>crontab文件的格式：</h2><p>minute    hour    day    month    weekday    username     command<br>minute：分，值为0-59<br>hour：小时，值为1-23<br>day：天，值为1-31<br>month：月，值为1-12<br>weekday：星期，值为0-6（0代表星期天，1代表星期一，以此类推）<br>username：要执行程序的用户，一般设置为root<br>command：要执行的程序路径（设置为绝对路径）例如：/home/www.osyunwei.com/osyunwei.sh</p>
+<h2 id="crontab规则详细实例"><a href="#crontab规则详细实例" class="headerlink" title="crontab规则详细实例"></a>crontab规则详细实例</h2><p>1、每天6:00执行<br>    0 6 <em> </em> <em> root /home/www.osyunwei.com/osyunwei.sh<br>2、每周六凌晨4:00执行<br>    0 4 </em> <em> 6 root /home/www.osyunwei.com/osyunwei.sh<br>3、每周六凌晨4:05执行<br>    5 4 </em> <em> 6 root /home/www.osyunwei.com/osyunwei.sh<br>4、每周六凌晨4:15执行<br>    15 4 </em> <em> 6 root /home/www.osyunwei.com/osyunwei.sh<br>5、每周六凌晨4:25执行<br>    25 4 </em> <em> 6 root /home/www.osyunwei.com/osyunwei.sh<br>6、每周六凌晨4:35执行<br>    35 4 </em> <em> 6 root /home/www.osyunwei.com/osyunwei.sh<br>7、每周六凌晨5:00执行<br>    5 </em> <em> 6 root /home/www.osyunwei.com/osyunwei.sh<br>8、每天8:40执行<br>    40 8 </em> <em> </em> root /home/www.osyunwei.com/osyunwei.sh<br>9、每天8:30执行<br>    30 8 <em> </em> <em> root /home/www.osyunwei.com/osyunwei.sh<br>10、每周一到周五的11:41开始，每隔10分钟执行一次<br>    41,51 11 </em> <em> 1-5   root /home/www.osyunwei.com/osyunwei.sh<br>    1-59/10 12-23 </em> <em> 1-5   root /home/www.osyunwei.com/osyunwei.sh<br>11、在每天的10:31开始，每隔2小时重复一次<br>    31 10-23/2 </em> <em> </em> root   /home/www.osyunwei.com/osyunwei.sh<br>12、每天15:00执行<br>    0 15 <em> </em> <em>  root /home/www.osyunwei.com/osyunwei.sh<br>13、每天的10:30开始，每隔2小时重复一次<br>    30 10-23/2 </em> <em> </em> root  /home/www.osyunwei.com/osyunwei.sh<br>14、每天15:30执行<br>    30 15 <em> </em> <em>  root /home/www.osyunwei.com/osyunwei.sh<br>15、每天17:50执行<br>    50 17 </em> <em> </em>  root /home/www.osyunwei.com/osyunwei.sh<br>16、每天8:00执行<br>    0 8 <em> </em> <em>  root  /home/www.osyunwei.com/osyunwei.sh<br>17、每天18:00执行<br>    0 18 </em> <em> </em>  root  /home/www.osyunwei.com/osyunwei.sh<br>18、每天8:30执行<br>    30 8 <em> </em> <em>  root  /home/www.osyunwei.com/osyunwei.sh<br>19、每天20:30<br>    30 20 </em> <em> </em>  root /home/www.osyunwei.com/osyunwei.sh<br>20、每周一到周五2:00<br>    0 2 <em> </em> 1-5 root /home/www.osyunwei.com/osyunwei.sh<br>21、每周一到周五9:30<br>    30 9 <em> </em> 1-5 root /home/www.osyunwei.com/osyunwei.sh<br>22、每周一到周五8:00，每周一到周五9:00<br>    0 8,9 <em> </em> 1-5  root /home/www.osyunwei.com/osyunwei.sh<br>23、每天23:59<br>    59 23 <em> </em> <em>  root  /home/www.osyunwei.com/osyunwei.sh<br>24、每周六23:59<br>    59 23 </em> <em> 6  root    /home/www.osyunwei.com/osyunwei.sh<br>25、每天0:30<br>    30 0 </em> <em> </em>  root  /home/www.osyunwei.com/osyunwei.sh<br>26、每周一到周五9:25到11:35之间、13:00到15:00之间，每隔10分钟运行一次<br>    25,35,45,55  9 <em> </em> 1-5  root   /home/www.osyunwei.com/osyunwei.sh<br>    5-59/10  10 <em> </em> 1-5  root   /home/www.osyunwei.com/osyunwei.sh<br>    5,15,25,35  11 <em> </em> 1-5  root   /home/www.osyunwei.com/osyunwei.sh<br>    <em>/10  13-15 </em> <em> 1-5  root   /home/www.osyunwei.com/osyunwei.sh<br>27、每周一到周五8:30、8:50、9:30、10:00、10:30、11:00、11:30、13:30、14:00、14:30、5:00分别执行一次<br>    30,50 8 </em> <em> 1-5  root  /home/www.osyunwei.com/osyunwei.sh<br>    30 9 </em> <em> 1-5  root  /home/www.osyunwei.com/osyunwei.sh
+    </em>/30 10-11 <em> </em> 1-5  root  /home/www.osyunwei.com/osyunwei.sh<br>    30 13 <em> </em> 1-5  root  /home/www.osyunwei.com/osyunwei.sh<br>    0,30 14-15 <em> </em> 1-5  root  /home/www.osyunwei.com/osyunwei.sh<br>28、每天23:50执行<br>    50 23 <em> </em> <em>  root  /home/www.osyunwei.com/osyunwei.sh<br>29、每天10:00、16:00执行<br>    0 10,16 </em> <em> </em>  root /home/www.osyunwei.com/osyunwei.sh<br>30、每天5:30执行<br>    30 5 <em> </em> <em>  root  /home/www.osyunwei.com/osyunwei.sh<br>31、每周一到周五9:30执行<br>    30 9 </em> <em> 1-5  root  /home/www.osyunwei.com/osyunwei.sh<br>32、每周一到周五13:00执行<br>    0 13 </em> <em> 1-5  root  /home/www.osyunwei.com/osyunwei.sh<br>33、每天7:51执行<br>    51 7 </em> <em> </em>  root /home/www.osyunwei.com/osyunwei.sh<br>34、每天7:53、12:40分别执行一次<br>    53 7 <em> </em> <em>  root /home/www.osyunwei.com/osyunwei.sh<br>    40 12 </em> <em> </em>  root /home/www.osyunwei.com/osyunwei.sh<br>35、每天7:55执行<br>    55 7 <em> </em> <em>  root  /home/www.osyunwei.com/osyunwei.sh<br>36、每天8:10、16:00、20:00分别执行一次<br>    10 8 </em> <em> </em>  root  /home/www.osyunwei.com/osyunwei.sh<br>    0 16 <em> </em> <em>  root  /home/www.osyunwei.com/osyunwei.sh<br>    0 20 </em> <em> </em>  root  /home/www.osyunwei.com/osyunwei.sh<br>37、每天7:57、8:00分别执行一次<br>    57 7 <em> </em> <em>  root  /home/www.osyunwei.com/osyunwei.sh<br>    0 8 </em> <em> </em>  root  /home/www.osyunwei.com/osyunwei.sh</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2016/08/27/crontab计划任务/" data-id="cisbzpzfr00056gtuuct3afmm" class="article-share-link" data-share="baidu" data-title="crontab计划任务">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2016/08/27/crontab计划任务/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/crontab/">crontab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/计划任务/">计划任务</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ACL权限" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="2016/08/27/ACL权限/" class="article-date">
@@ -115,7 +171,7 @@ tune2fs 1.41.12 (17-May-2010)
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2016/08/27/ACL权限/" data-id="cisbzdgaf0000pgturjno75tc" class="article-share-link" data-share="baidu" data-title="ACL权限">分享到</a>
+        <a data-url="http://yoursite.com/2016/08/27/ACL权限/" data-id="cisbzpzfe00026gtukgxj8hhz" class="article-share-link" data-share="baidu" data-title="ACL权限">分享到</a>
       
 
       
@@ -229,7 +285,7 @@ tune2fs 1.41.12 (17-May-2010)
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2016/07/05/集群基础/" data-id="cisbzdgb40006pgtugu2ojna9" class="article-share-link" data-share="baidu" data-title="集群基础">分享到</a>
+        <a data-url="http://yoursite.com/2016/07/05/集群基础/" data-id="cisbzpzfz00086gtu9fz3l4di" class="article-share-link" data-share="baidu" data-title="集群基础">分享到</a>
       
 
       
@@ -401,7 +457,7 @@ $ hexo s
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2016/07/02/Windows下使用Github-Hexo搭建个人博客/" data-id="cisbzdgao0002pgtu1m1kmxv9" class="article-share-link" data-share="baidu" data-title="Windows下使用Github +Hexo搭建个人博客">分享到</a>
+        <a data-url="http://yoursite.com/2016/07/02/Windows下使用Github-Hexo搭建个人博客/" data-id="cisbzpzf100006gtuii1e2fyc" class="article-share-link" data-share="baidu" data-title="Windows下使用Github +Hexo搭建个人博客">分享到</a>
       
 
       
@@ -454,7 +510,7 @@ $ hexo s
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2016/07/01/hello-world/" data-id="cisbzdgax0005pgtujmt88q7m" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
+        <a data-url="http://yoursite.com/2016/07/01/hello-world/" data-id="cisbzpzfw00066gtus8wtd91s" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
       
 
       
@@ -478,7 +534,7 @@ $ hexo s
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="categories/集群技术/">集群技术</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="categories/集群技术/">集群技术</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -487,7 +543,7 @@ $ hexo s
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/权限/">权限</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/负载均衡/">负载均衡</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/集群/">集群</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/高可用/">高可用</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/高性能/">高性能</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/crontab/">crontab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/权限/">权限</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/计划任务/">计划任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/负载均衡/">负载均衡</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/集群/">集群</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/高可用/">高可用</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/高性能/">高性能</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -496,7 +552,7 @@ $ hexo s
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="tags/Linux/" style="font-size: 10px;">Linux</a> <a href="tags/blog/" style="font-size: 10px;">blog</a> <a href="tags/权限/" style="font-size: 10px;">权限</a> <a href="tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="tags/集群/" style="font-size: 10px;">集群</a> <a href="tags/高可用/" style="font-size: 10px;">高可用</a> <a href="tags/高性能/" style="font-size: 10px;">高性能</a>
+      <a href="tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="tags/Linux/" style="font-size: 10px;">Linux</a> <a href="tags/blog/" style="font-size: 10px;">blog</a> <a href="tags/crontab/" style="font-size: 10px;">crontab</a> <a href="tags/权限/" style="font-size: 10px;">权限</a> <a href="tags/计划任务/" style="font-size: 10px;">计划任务</a> <a href="tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="tags/集群/" style="font-size: 10px;">集群</a> <a href="tags/高可用/" style="font-size: 10px;">高可用</a> <a href="tags/高性能/" style="font-size: 10px;">高性能</a>
     </div>
   </div>
 
@@ -505,7 +561,7 @@ $ hexo s
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2016/07/">七月 2016</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2016/07/">七月 2016</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -515,6 +571,10 @@ $ hexo s
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="2016/08/27/crontab计划任务/">crontab计划任务</a>
+          </li>
         
           <li>
             <a href="2016/08/27/ACL权限/">ACL权限</a>
